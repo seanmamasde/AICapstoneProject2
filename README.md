@@ -1,1 +1,1 @@
-# AI Capstone Prohect 2
+# AI Capstone Project 2
