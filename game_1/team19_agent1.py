@@ -1,3 +1,9 @@
+"""
+Team Name: 冠文幫
+Team Member: 110550074 馬楷翔, 110550038 莊書杰, 110550032 文玠敦
+Team ID: 19
+"""
+
 import STcpClient
 import numpy as np
 import random

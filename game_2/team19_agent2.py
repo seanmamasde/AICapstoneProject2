@@ -1,3 +1,9 @@
+"""
+Team Name: 冠文幫
+Team Member: 110550074 馬楷翔, 110550038 莊書杰, 110550032 文玠敦
+Team ID: 19
+"""
+
 import STcpClient
 import numpy as np
 import random
@@ -288,7 +294,7 @@ def MTCS(playerID, mapStat, sheepStat):
         
     # Choose the best action based on the most visited child of the root
     best_child = max(root.children, key=lambda x: x.visits)
-    print(time_count)
+    # print(time_count)
     if flag:
         return best_child.sheep
     else:
@@ -307,7 +313,7 @@ def MTCS(playerID, mapStat, sheepStat):
 def InitPos(mapStat):
     init_pos = [0, 0]
     sheepStat = [[0] * BOARD_SIZE for _ in range(BOARD_SIZE)]
-    init_choice = MTCS(1, mapStat, sheepStat)
+    init_choice = MTCS(playerID, mapStat, sheepStat)
     init_pos = [init_choice[0], init_choice[1]]
     return init_pos
     
