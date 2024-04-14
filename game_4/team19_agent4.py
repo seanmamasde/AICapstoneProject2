@@ -258,14 +258,12 @@ def Simulate(node):
 
 
 def Backpropagate(node, score):
-    # Propagate the team score up the tree
     while len(node.parent) > 0:
         node.visits += 1
-        # Use the team score for backpropagation
-        node.score += score[node.id - 1]  # Assuming IDs are 1-indexed
+        node.score += score[node.id - 1]
         node = node.parent[0]
     node.visits += 1
-    node.score += score[node.id - 1]  # Final update at the root node
+    node.score += score[node.id - 1]
 
 
 def UCTValue(total_visits, node_visits, node_score):
@@ -375,7 +373,7 @@ def MTCS(playerID, mapStat, sheepStat):
 def InitPos(mapStat):
     init_pos = [0, 0]
     sheepStat = [[0] * BOARD_SIZE for _ in range(BOARD_SIZE)]
-    init_choice = MTCS(1, mapStat, sheepStat)
+    init_choice = MTCS(playerID, mapStat, sheepStat)
     init_pos = [init_choice[0], init_choice[1]]
     return init_pos
 
