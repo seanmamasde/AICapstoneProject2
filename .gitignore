@@ -1,1 +1,10 @@
+# JetBrains
 /.idea
+
+# pyinstaller
+**/dist
+**/build
+**/*.spec
+
+# python
+**/__pycache__
