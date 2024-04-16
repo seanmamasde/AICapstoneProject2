@@ -8,4 +8,3 @@
 4. run `.\AI_Game.exe` to start simulation.
 
 > report at https://hackmd.io/@76Pgq-4ETcinb3xwlLHXDA/B1O3accxR
-> 
