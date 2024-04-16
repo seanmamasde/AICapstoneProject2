@@ -318,7 +318,7 @@ designing these trees.
 
 ## Reference
 
-You can find the source code and report on our [GitHub repository](https://github.com/seanmamasde/AICapstoneProject2).
+You can find the source code and report on our GitHub repository at https://github.com/seanmamasde/AICapstoneProject2.
 
 <!--  
 The report (maximum 10 pages single-spaced) should describe how your game agents work, your experiments and experiences,
