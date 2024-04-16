@@ -16,16 +16,23 @@ This project is divided into 4 parts, each part is a slightly different variant 
 rules remain unchanged), and presents a different set of criteria as challenges for our agent, which is as follows:
 
 1. The Basic Form
+
    The game is conducted on a `12*12` board, which then will randomly generate a connected portion consists of `64`
    playable cells.
    Each of the 4 players gets `16` sheep initially.
+
 2. Overcrowded Bigger Board
+
    Each player now has `32` sheep to begin the game with.
    Also, the field is now `100` cells in total chosen within
    a `15*15` board.
+
 3. Imperfect Information
+
    A player (which is out agent) does not know the number of sheep in cells occupied by other players.
+
 4. Cooperative Play
+
    The 4 players form 2 teams: with player 1 & 3 on the same team and 2 & 4 on the other.
 
 ## Methodology
@@ -39,16 +46,23 @@ search tree, and guiding the search based on simulation results.
 The algorithm includes 4 parts:
 
 1. Selection
+
    Starting from the root node, the algorithm selects child nodes based on a certain strategy (such as UCB applied to
    trees, UCT) until it finds an unexplored node.
+
 2. Expansion
+
    Starting from the current game state, the algorithm expands the search tree by simulating the game according to a
    certain strategy (usually random selection) until a certain condition is met
    (such as reaching a leaf node or maximum depth).
+
 3. Simulation
+
    The algorithm simulates the game starting from the selected node,
    often using random actions or heuristic strategies, until it reaches a terminal game state.
+
 4. Back Propagation
+
    Based on the result of the simulation, the algorithm updates statistical information (such as win counts and visit
    counts) for all nodes along the search path.
    This information guides future node selections.
@@ -80,18 +94,25 @@ In our implementation, each node contains the following information:
 During each iteration, the following operations are performed:
 
 1. Selection
+   
    First, calculate the UCT score based on the node's information, and choose the child node with the highest UCT score
    until reaching a leaf node.
+
 2. Expansion
+
    Creates child nodes for all possible actions at the current state and returns the total number of possible actions.
    For the player's first action, choose any border cell to place sheep.
    For later actions, select the divided group, the number of divisions, and the position of movement.
+
 3. Simulation
+
    If the node has no available actions, let each player take random actions from that point until the game ends, and
    return the score obtained based on the game result.
    If the node has available actions, randomly choose one child node and let each player take random actions until the
    game ends, then return the score obtained based on the game result.
+
 4. Back Propagation
+
    Update the score and visit count of all nodes along the path from the root node to the leaf node.
    Noted that the score to be updated for each node should be the score of the player from the parent node, as the child
    node represents the outcome obtained after the parent node makes a decision.
